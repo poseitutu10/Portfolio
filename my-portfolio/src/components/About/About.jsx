@@ -4,7 +4,6 @@ import Header from "../Home/Header";
 import Profile from "../Home/Profile";
 import Themer from "../Home/Themer";
 import { AllOverContext } from "../../utils/OverallContext";
-import { Link } from "react-router-dom";
 
 const About = () => {
   const { isDark } = useContext(AllOverContext);
@@ -30,7 +29,7 @@ const About = () => {
               <Profile />
             </div>
             <div className="details flex justify-evenly gap-4">
-              <div className="left-detail w-1/3 flex flex-col gap-5 ">
+              <div className="left-detail w-1/4 flex flex-col gap-5 ">
                 <div>
                   <h1 className="text-[#FF00FF] font-semibold text-lg">
                     First Name:
@@ -55,7 +54,7 @@ const About = () => {
                   <h1 className="text-lg">Ghana</h1>
                 </div>
               </div>
-              <div className="right-detail w-1/3 flex flex-col gap-5">
+              <div className="right-detail w-1/4 flex flex-col gap-5">
                 <div>
                   <h1 className="text-[#FF00FF] font-semibold text-lg">
                     Email:
