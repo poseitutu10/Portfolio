@@ -1,16 +1,90 @@
+import { useState } from "react";
+import side from "../../assets/side.webp";
 
 const ContactDetails = () => {
+  const [form, setForm] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+
+  const handleChange = (event) => {
+    setForm((prev) => {
+      return {
+        ...prev,
+        [event.target.name]: event.target.value,
+      };
+    });
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    console.log(form);
+    setForm({
+      name: "",
+      email: "",
+      message: "",
+    });
+  }
   return (
     <>
-        <div className="about py-5  mx-5 md:mx-24 lg:mx-32 xl:mx-40">
+      <div className="about py-5  mx-5 md:mx-24 lg:mx-32 xl:mx-40 h-screen">
         <div>
           <h2 className="text-5xl font-semibold py-12 text-center">
             CONTACT <span className="text-[#FF00FF]">ME</span>
           </h2>
+          <div className="contact-main flex gap-10">
+            <div className="left w-1/2 hidden lg:block">
+              <img
+                src={side}
+                alt="side-photo"
+                className="rounded-xl w-full h-full"
+              />
+            </div>
+            <div className="right border lg:w-1/2 rounded-xl p-5 w-full ">
+              <h3 className="text-3xl font-semibold py-5">Send me a message</h3>
+              <form
+                className="flex flex-col gap-4"
+                method="POST"
+                onSubmit={handleSubmit}
+              >
+                <input
+                  type="text"
+                  placeholder="Your Name"
+                  name="name"
+                  value={form.name}
+                  onChange={handleChange}
+                  className="border p-3 rounded-md"
+                />
+                <input
+                  type="email"
+                  placeholder="Your Email"
+                  name="email"
+                  value={form.email}
+                  onChange={handleChange}
+                  className="border p-3 rounded-md"
+                />
+                <textarea
+                  rows={5}
+                  placeholder="Your Message"
+                  name="message"
+                  value={form.message}
+                  onChange={handleChange}
+                  className="border p-3 rounded-md"
+                />
+                <button
+                  className="w-full bg-[#FF00FF] text-white p-3 rounded-md hover:bg-[#ff50ff] transition duration-300 ease-in"
+                  type="submit"
+                >
+                  Send Message
+                </button>
+              </form>
+            </div>
+          </div>
         </div>
       </div>
     </>
-  )
-}
+  );
+};
 
-export default ContactDetails
+export default ContactDetails;
