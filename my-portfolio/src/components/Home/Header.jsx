@@ -37,15 +37,15 @@ const Header = () => {
                 <li>About</li>
               </Link>
 
-              {/* <Link
-                to="/"
+              <Link
+                to="/projects"
                 className={`text-base ${
                   active === 3 ? "bg-[#FF00FF]" : ""
                 } px-5 py-2 hover:bg-[#FF00FF] rounded-tl-2xl rounded-br-2xl font-semibold`}
                 onClick={() => handleActive(3)}
               >
-                <li>Portfolio</li>
-              </Link> */}
+                <li>Projects</li>
+              </Link>
 
               <Link
                 to="/contact"

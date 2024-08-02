@@ -5,6 +5,7 @@ import Header from "../Home/Header";
 import Themer from "../Home/Themer";
 import { AllOverContext } from "../../utils/OverallContext";
 import AboutDetails from "./AboutDetails";
+import Footer from "../Home/Footer";
 
 const About = () => {
   const { isDark } = useContext(AllOverContext);
@@ -18,7 +19,7 @@ const About = () => {
         <Header isDark={isDark} />
         <Themer />
         <AboutDetails />
-        
+        <Footer />
       </div>
     </>
   );

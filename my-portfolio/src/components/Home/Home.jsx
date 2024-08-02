@@ -8,6 +8,8 @@ import { AllOverContext } from "../../utils/OverallContext";
 import AboutDetails from "../About/AboutDetails";
 import Themer from "./Themer";
 import ContactDetails from "../Contact/ContactDetails";
+import { Link } from "react-router-dom";
+import Footer from "./Footer";
 
 const Home = () => {
   const { isDark } = useContext(AllOverContext);
@@ -58,6 +60,7 @@ const Home = () => {
           <AboutDetails />
           <ContactDetails />
         </div>
+        <Footer />
       </div>
     </>
   );

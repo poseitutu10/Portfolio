@@ -1,11 +1,11 @@
+import React, { useContext } from "react";
 import { AllOverContext } from "../../utils/OverallContext";
-import { useContext } from "react";
 import Header from "../Home/Header";
-import Themer from "../Home/Themer";
-import ContactDetails from "./ContactDetails";
 import Footer from "../Home/Footer";
+import Themer from "../Home/Themer";
+import ProjectDetails from "./ProjectDetails";
 
-const Contact = () => {
+const Project = () => {
   const { isDark } = useContext(AllOverContext);
   return (
     <>
@@ -16,11 +16,11 @@ const Contact = () => {
       >
         <Header isDark={isDark} />
         <Themer />
-        <ContactDetails />
+        <ProjectDetails />
         <Footer />
       </div>
     </>
   );
 };
 
-export default Contact;
+export default Project;
